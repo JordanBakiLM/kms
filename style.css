@@ -1,0 +1,25 @@
+.post-image{
+
+  width:100%;
+
+  height:380px;
+
+  object-fit:cover;
+
+  border-radius:0;
+
+  transition:0.5s;
+
+}
+
+/* Version mobile */
+
+@media(max-width:768px){
+
+  .post-image{
+
+    height:320px;
+
+  }
+
+}

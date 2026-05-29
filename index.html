@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sami 😍😘✨</title>
+
+  <!-- Police -->
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"> -->
+  
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+    
+    .post-image{
+
+  width:100%;
+
+  height:380px;
+
+  object-fit:cover;
+
+  border-radius:0;
+
+  transition:0.5s;
+
+}
+
+/* Version mobile */
+    
+    
+    
+
+    body{
+      font-family:'Playfair Display',sans-serif;
+      overflow-x:hidden;
+      background:#061421;
+      color:white;
+    }
+
+    /* FOND MAGIQUE */
+
+    .background{
+      position:fixed;
+      width:100%;
+      height:100%;
+      top:0;
+      left:0;
+      z-index:-5;
+
+      background:
+      linear-gradient(
+      180deg,
+      #05101d,
+      #0a2740,
+      #144d73,
+      #6fc3df
+      );
+    }
+
+    /* ÉTOILES */
+
+    .stars{
+      position:fixed;
+      width:100%;
+      height:100%;
+      z-index:-4;
+    }
+
+    .star{
+      position:absolute;
+      width:3px;
+      height:3px;
+      background:white;
+      border-radius:50%;
+      animation:twinkle 2s infinite alternate;
+    }
+
+    @keyframes twinkle{
+      from{opacity:0.2;}
+      to{opacity:1;}
+    }
+
+    /* BULLES */
+
+    .bubble{
+      position:absolute;
+      bottom:-100px;
+      border-radius:50%;
+      background:rgba(255,255,255,0.12);
+      animation:rise linear infinite;
+    }
+
+    @keyframes rise{
+      from{
+        transform:translateY(0);
+      }
+      to{
+        transform:translateY(-120vh);
+      }
+    }
+
+    /* INTRO */
+
+    .intro{
+      min-height:100vh;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      padding:20px;
+      position:relative;
+    }
+
+    .mini-photos{
+      display:flex;
+      gap:12px;
+      margin-bottom:30px;
+      flex-wrap:wrap;
+      justify-content:center;
+    }
+
+    .mini-photos img{
+      width:85px;
+      height:85px;
+      object-fit:cover;
+      border-radius:50%;
+      border:3px solid rgba(255,255,255,0.5);
+      box-shadow:0 0 25px rgba(255,255,255,0.3);
+      animation:floatPhoto 4s ease-in-out infinite;
+    }
+
+    .mini-photos img:nth-child(2){
+      animation-delay:1s;
+    }
+
+    .mini-photos img:nth-child(3){
+      animation-delay:2s;
+    }
+
+    @keyframes floatPhoto{
+      0%{transform:translateY(0);}
+      50%{transform:translateY(-12px);}
+      100%{transform:translateY(0);}
+    }
+
+    h1{
+      font-size:3.8rem;
+      margin-bottom:20px;
+      text-shadow:0 0 30px rgba(255,255,255,0.4);
+      animation:fadeUp 1.5s ease;
+    }
+
+    .intro-text{
+      max-width:700px;
+      line-height:1.9;
+      font-size:1.15rem;
+      opacity:0.95;
+      animation:fadeUp 2s ease;
+    }
+
+    @keyframes fadeUp{
+      from{
+        opacity:0;
+        transform:translateY(40px);
+      }
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+    .btn{
+      margin-top:40px;
+      padding:16px 35px;
+      border:none;
+      border-radius:50px;
+      background:rgba(255,255,255,0.15);
+      backdrop-filter:blur(12px);
+      color:white;
+      font-size:1rem;
+      cursor:pointer;
+      transition:0.4s;
+      box-shadow:0 15px 35px rgba(0,0,0,0.3);
+    }
+
+    .btn:hover{
+      transform:scale(1.08);
+      background:rgba(255,255,255,0.25);
+    }
+
+    /* SECTIONS */
+
+    section{
+      padding:100px 20px;
+      text-align:center;
+    }
+
+    h2{
+      font-size:2.5rem;
+      margin-bottom:50px;
+    }
+
+    /* GALERIE STYLE APP */
+
+    .gallery{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:25px;
+      max-width:1200px;
+      margin:auto;
+    }
+
+    .card{
+      position:relative;
+      overflow:hidden;
+      border-radius:28px;
+      background:rgba(255,255,255,0.08);
+      backdrop-filter:blur(12px);
+      transition:0.5s;
+      cursor:pointer;
+    }
+
+    .card img{
+      width:100%;
+      height:340px;
+      object-fit:cover;
+      transition:0.6s;
+    }
+
+    .card:hover img{
+      transform:scale(1.1);
+    }
+
+    .card:hover{
+      transform:translateY(-10px);
+      box-shadow:0 20px 40px rgba(0,0,0,0.35);
+    }
+
+    .overlay{
+      position:absolute;
+      bottom:0;
+      width:100%;
+      padding:18px;
+      background:linear-gradient(transparent,rgba(0,0,0,0.85));
+    }
+
+    /* VIDEO */
+
+    .video-container{
+      display:flex;
+      flex-direction:column;
+      gap:40px;
+      align-items:center;
+    }
+
+    video{
+      width:92%;
+      max-width:850px;
+      border-radius:25px;
+      box-shadow:0 15px 40px rgba(0,0,0,0.4);
+    }
+
+    /* MESSAGE */
+
+    .message-box{
+      max-width:850px;
+      margin:auto;
+      padding:45px;
+      border-radius:30px;
+      background:rgba(255,255,255,0.08);
+      backdrop-filter:blur(12px);
+      line-height:2;
+      font-size:1.15rem;
+      box-shadow:0 20px 45px rgba(0,0,0,0.3);
+    }
+
+    /* TIMELINE */
+
+    .timeline{
+      max-width:850px;
+      margin:auto;
+      text-align:left;
+    }
+
+    .timeline-item{
+      margin:25px 0;
+      padding:25px;
+      border-radius:25px;
+      background:rgba(255,255,255,0.08);
+      transition:0.4s;
+    }
+
+    .timeline-item:hover{
+      transform:translateX(10px);
+      background:rgba(255,255,255,0.13);
+    }
+
+    /* LUMIÈRES MAGIQUES */
+
+    .glow{
+      position:fixed;
+      width:250px;
+      height:250px;
+      border-radius:50%;
+      background:rgba(111,195,223,0.15);
+      filter:blur(70px);
+      z-index:-3;
+      animation:moveGlow 10s infinite alternate;
+    }
+
+    @keyframes moveGlow{
+      from{
+        transform:translate(0,0);
+      }
+      to{
+        transform:translate(120px,80px);
+      }
+    }
+
+    footer{
+      padding:60px;
+      opacity:0.8;
+    }
+
+  </style>
+</head>
+
+<body>
+  
+  
+  
+  <!-- Barre iPhone -->
+
+<div class="iphone-bar">
+
+  <div class="logo">
+    Samira ✨
+  </div>
+
+  <div class="nav-icons">
+    🌊 ✨ 💙
+  </div>
+
+</div>
+
+<!-- Notification -->
+
+<div class="notification">
+  Une journée spéciale pour une fille extraordinaire 💙
+</div>
+
+<!-- Lumière tactile -->
+
+<div class="touch-light" id="light"></div>
+
+<div class="app-container">
+
+
+
+
+
+
+  <!-- Fond -->
+  <div class="background"></div>
+
+  <!-- Étoiles -->
+  <div class="stars" id="stars"></div>
+
+  <!-- Glow -->
+  <div class="glow"></div>
+
+  <!-- INTRO -->
+
+  <div class="intro">
+
+    <!-- MINI PHOTOS -->
+    <div class="mini-photos">
+
+      <img src="images/mini1.jpg">
+      <img src="images/mini2.jpg">
+      <img src="images/mini3.jpg">
+
+    </div>
+
+    <h1>Samira 😻✨</h1>
+
+    <p class="intro-text">
+
+      Certaines personnes ressemblent à des endroits paisibles.
+      Elles apportent quelque chose de rare :
+      du calme, de la lumière et des souvenirs qu’on garde longtemps.
+      Elles deviennent nos refuges quand tout va mal, nos compagnes dans les moments de joie et de bonheur, nos confidentes bref un ancrage sur lequel on a toute confiance.
+
+      Et toi…
+      tu fais partie de ces personnes qui rendent la vie plus belle 🌊💙
+
+    </p>
+
+    <button class="btn" onclick="openGallery()">
+      Entrer ✨
+    </button>
+
+  </div>
+
+  <!-- GALERIE -->
+
+  <section id="gallery">
+
+    <h2> Une perle dans l’océan 🌸</h2>
+
+    <div class="gallery">
+
+      <div class="card">
+        <img src="images/photo1.jpg">
+        <div class="overlay">
+          Une personne lumineuse ✨
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="images/photo2.jpg">
+        <div class="overlay">
+          Une personne incroyable 💙
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="images/photo3.jpg">
+        <div class="overlay">
+          Une amie sincère 🌊
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="images/photo4.jpg">
+        <div class="overlay">
+          Une femme ambitieuse et appliquée ✨
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="images/photo5.jpg">
+        <div class="overlay">
+          Telle une nuit de pleine lune 💙
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="images/photo6.jpg">
+        <div class="overlay">
+           Une bénédiction pour ses proches🌙
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- MESSAGE -->
+
+  <section>
+
+    <h2>Pour toi 💌</h2>
+
+    <div class="message-box">
+
+      Samira,
+
+      parfois les meilleures personnes entrent dans notre vie
+      sans prévenir,
+      puis deviennent peu à peu irremplaçables.
+
+      Merci pour les moments,
+      les discussions,
+      les fous rires,
+      et cette présence sincère que tu apportes autour de toi.
+      Merci pour chaque fois où tu as essuyé mes larmes, consolé mes chagrins,écouté avec une oreille attentive mes innombrables soucis.
+      Merci de te soucier de moi, de ma santé, de mon bonheur d’une manière aussi sincère.
+
+      Certaines amitiés deviennent une partie du cœur.
+      Certaines personnes deviennent une partie de nous.
+      Certains sourires nous rendent plus vivants.
+      Certaines relations deviennent une fusion.
+      Et la nôtre en fait clairement partie ✨🌊
+
+    </div>
+
+  </section>
+
+  <!-- TIMELINE -->
+
+  <section>
+
+    <h2>Notre histoire 🌙</h2>
+
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <h3>✨ Le début</h3>
+        <p>Le jour où nos chemins se sont croisés.
+        Tu as été l’une des premières personnes qui m’ont fait me sentir bien dans cette ville</p>
+      </div>
+
+      <div class="timeline-item">
+        <h3>🌸 Les souvenirs</h3>
+        <p>Des moments qui resteront longtemps.
+        Des souvenirs qui resteront gravés dans nos mémoires </p>
+      </div>
+
+      <div class="timeline-item">
+        <h3>💙 Aujourd’hui</h3>
+        <p>Une personne importante dans ma vie.
+        Et avec qui j’aimerais cheminer toute ma vie</p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- VIDÉOS -->
+
+  <section>
+
+    <h2> Ta beauté 😍 🎥</h2>
+
+    <div class="video-container">
+
+      <video controls>
+        <source src="videos/video1.mp4" type="video/mp4">
+      </video>
+
+      <video controls>
+        <source src="videos/video2.mp4" type="video/mp4">
+      </video>
+
+    </div>
+
+  </section>
+
+  <footer>
+    Crée avec tout mon amour et mon affection pour toi ma belle 💙
+  </footer>
+
+  <script>
+
+    // Scroll
+
+    function openGallery(){
+
+      document.getElementById("gallery")
+      .scrollIntoView({
+        behavior:"smooth"
+      });
+
+    }
+
+    // ÉTOILES
+
+    const stars =
+    document.getElementById("stars");
+
+    for(let i=0;i<120;i++){
+
+      let star =
+      document.createElement("div");
+
+      star.classList.add("star");
+
+      star.style.top =
+      Math.random()*100 + "%";
+
+      star.style.left =
+      Math.random()*100 + "%";
+
+      star.style.animationDuration =
+      (Math.random()*3 + 1) + "s";
+
+      stars.appendChild(star);
+
+    }
+
+    // BULLES
+
+    for(let i=0;i<40;i++){
+
+      let bubble =
+      document.createElement("div");
+
+      bubble.classList.add("bubble");
+
+      bubble.style.left =
+      Math.random()*100 + "vw";
+
+      let size =
+      Math.random()*60 + 10;
+
+      bubble.style.width = size + "px";
+      bubble.style.height = size + "px";
+
+      bubble.style.animationDuration =
+      (Math.random()*10 + 8) + "s";
+
+      document.body.appendChild(bubble);
+
+    }
+
+  </script>
+  
+  
+  
+  <!-- Galerie style Instagram -->
+
+<section>
+
+  <h2>Moments précieux 📸</h2>
+
+  <div class="instagram-gallery">
+
+    <!-- POST 1 -->
+
+    <div class="post">
+
+      <div class="post-header">
+
+        <img
+        class="post-image"
+        src="images/mini1.jpg">
+
+        <h3>Samira ✨</h3>
+
+      </div>
+
+      <img
+      class="post-image"
+      src="images/photo1.jpg">
+
+      <div class="post-actions">
+        💙 ✨ 🌊
+      </div>
+
+      <div class="post-text">
+
+        Certaines personnes emettent une lumière spéciale ✨
+
+      </div>
+
+    </div>
+
+    <!-- POST 2 -->
+
+    <div class="post">
+
+      <div class="post-header">
+
+        <img
+        class="post-image"
+        src="images/mini2.jpg">
+
+        <h3>Beautiful Girl 🌸</h3>
+
+      </div>
+
+      <img
+      class="post-image"
+      src="images/photo2.jpg">
+
+      <div class="post-actions">
+        💙 🌙 ✨
+      </div>
+
+      <div class="post-text">
+
+        Merci d’être celle que tu es�
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+</div>
+  
+  
+  
+  
+  
+  
+
+</body>
+</html>
